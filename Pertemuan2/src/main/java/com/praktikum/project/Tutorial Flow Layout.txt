@@ -1,0 +1,55 @@
+//Membuat Flow Layout
+1.Buka cmd dan ketikkan perintah dibawah ini !
+mvn archetype:generate
+-DgroupId=com.praktikum.project
+-DartifactId=pertemuan2
+-DarchetypeArtifactId=maven-archetype-quickstart
+-DinteractiveMode=false
+
+2.Buat file DemoFlowLayout.java pada src\main\java\com\praktikum\project dengan isi sebagai berikut !
+package com.praktikum.project;
+
+import javax.swing.*;
+import java.awt.FlowLayout;
+
+public class DemoFlowLayout
+{
+	public static void main(String[]xx)
+	{
+		//beberapa button untuk demo
+		JButton btn1 = new JButton("Tombol 1");
+		JButton btn2 = new JButton("Tombol 2");
+		JButton btn3 = new JButton("Tombol 3");
+		JButton btn4 = new JButton("Tombol 4");
+		JButton btn5 = new JButton("Tombol 5");
+		JButton btn6 = new JButton("Tombol 6");
+		
+		JPanel panel = new JPanel();
+		panel.setLayout(new FlowLayout());
+		panel.add(btn1);
+		panel.add(btn2);
+		panel.add(btn3);
+		panel.add(btn4);
+		panel.add(btn5);
+		panel.add(btn6);
+		
+		//menginstankan Frame
+		JFrame fr = new JFrame("Belajar Layout");
+		
+		fr.getContentPanel().add(panel);
+		//ukuran frame
+		fr.setSize(800,400);
+		
+		//posisi ditengah
+		fr.setLocationRelativeTo(null);
+		
+		//tampilkan
+		fr.setVisible(true);
+	}
+}
+
+3.Jika sudah maka kita compile dan jalankan file DemoFlowLayout.java dengan perintah berikut !
+mvn clean install
+mvn exec:java -Dexec.mainClass=com.praktikum.project.DemoFlowLayout
+
+4.Selesai
